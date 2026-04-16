@@ -189,13 +189,17 @@ export default function SnakeGame({ onScoreChange, isPaused }: SnakeGameProps) {
   }, [snake, food, gameOver]);
 
   return (
-    <div className="relative group p-2 rounded-xl elegant-panel grid-bg overflow-hidden border border-border-dark">
+    <div className="relative group p-4 border-l-4 border-lcars-blue bg-black overflow-hidden lcars-text">
+      <div className="flex justify-between mb-2 text-[10px] text-lcars-blue font-bold">
+        <span>Subsystem: Kinetic_Grid</span>
+        <span>Scanning...</span>
+      </div>
       <canvas
         ref={canvasRef}
         width={400}
         height={400}
         onClick={() => gameOver && resetGame()}
-        className="cursor-pointer block max-w-full h-auto"
+        className="cursor-pointer block max-w-full h-auto border border-lcars-blue/20"
       />
       {!gameOver && !isPaused && (
         <div className="absolute top-2 right-2 pointer-events-none opacity-50 group-hover:opacity-100 transition-opacity">
